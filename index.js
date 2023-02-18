@@ -54,7 +54,7 @@ app.get('/sci-fi',async (req,res)=>{
                 const average_time_minute=parseFloat($(movie).find(' p span.runtime').text().slice(0,-4))
                 const rating=parseFloat($(movie).find(' div div strong').text())
                 const certificate=$(movie).find(' p.text-muted>span.certificate').text()
-                const genre =$(movie).find(' p.text-muted>span.genre').text().trim().slice(1)
+                const genre =$(movie).find(' p.text-muted>span.genre').text().trim()
                 $(movie).find(' p.text-muted>span').remove()
                 const description=$(movie).find(' p.text-muted').text().trim()
                 const vote_count=$(movie).find(' p.sort-num_votes-visible>span').text().trim().slice(6)
