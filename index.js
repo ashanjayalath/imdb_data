@@ -10,7 +10,13 @@ const movieList = []
 const movieList2 = []
 
 app.get('/',async (req,res)=> {
-    res.send("Welcome ashan jayalath free API")
+    const Author= "Welcome ashan jayalath free movie API"
+    const Notice="This api is released for free and all the data here is provided by IMDB website.The data here is owned by IMDB."
+    const _____________="See how to use this API."
+    const use__________="Here you can get only 2 services"
+    const ______Ex01_________="https://imdb-data.vercel.app/movies"
+    const ______Ex02_________="https://imdb-data.vercel.app/sci-fi"
+    res.send({Author,Notice,_____________,use__________,______Ex01_________,______Ex02_________})
 });
 app.get('/movies',async (req,res)=>{
     axios.get(url)
