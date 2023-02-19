@@ -5,7 +5,7 @@ const cheerio = require("cheerio")
 const {json} = require("express");
 const app=express()
 const url="https://www.imdb.com"
-// const url2="https://www.imdb.com/search/title/?genres=sci-fi&explore=title_type,genres&pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=3396781f-d87f-4fac-8694-c56ce6f490fe&pf_rd_r=89EDCCTHF97ET0SZMV5R&pf_rd_s=center-1&pf_rd_t=15051&pf_rd_i=genre&ref_=ft_gnr_pr1_i_2"
+const url1="https://www.imdb.com/chart/top/?ref_=nv_mp_mv250"
 const url2="https://www.imdb.com/search/title/?genres=sci-fi&explore=title_type,genres&pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=3396781f-d87f-4fac-8694-c56ce6f490fe&pf_rd_r=1VJMH1KEW0JNCYF5SEB4&pf_rd_s=center-1&pf_rd_t=15051&pf_rd_i=genre&ref_=ft_gnr_pr1_i_2"
 const movieList = []
 const movieList2 = []
@@ -20,7 +20,7 @@ app.get('/',async (req,res)=> {
     res.send({Author,Notice,_____________,use__________,______Ex01_________,______Ex02_________})
 });
 app.get('/movies',async (req,res)=>{
-    axios.get(url)
+    axios.get(url1)
         .then((response)=>{
             const html=response.data
             const $=cheerio.load(html)
