@@ -50,6 +50,7 @@ app.get('/sci-fi',async (req,res)=>{
             $('.lister-list .lister-item-content',html).each((i,movie)=>{
                 const id=i
                 const title=$(movie).find(' h3 a').text()
+                const link="https://www.imdb.com"+$(movie).find(' h3 a').attr('href').text()
                 const movie_year=parseInt($(movie).find(' h3 span.lister-item-year').text().slice(1,5))
                 const average_time_minute=parseFloat($(movie).find(' p span.runtime').text().slice(0,-4))
                 const rating=parseFloat($(movie).find(' div div strong').text())
@@ -61,6 +62,7 @@ app.get('/sci-fi',async (req,res)=>{
                 movieList2.push({
                     id,
                     title,
+                    link,
                     movie_year,
                     certificate,
                     genre,
